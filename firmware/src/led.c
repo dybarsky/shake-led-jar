@@ -4,13 +4,13 @@
 #define LED_PIN BIT4
 
 void configure_led() {
-    P2DIR |= LED_PIN;
+	P2DIR |= LED_PIN;
 }
 
 void turn_on_led() {
-    P2OUT |= LED_PIN;
+	P2OUT |= LED_PIN;
 }
 
 void turn_off_led() {
-    P2OUT &= ~LED_PIN;
+	P2OUT &= ~LED_PIN;
 }

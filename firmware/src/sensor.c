@@ -23,7 +23,9 @@ void configure_sensor() {
 #pragma vector = PORT2_VECTOR
 __interrupt void on_port2_high() {
 	if (P2IFG & SENSOR_PIN) {
+		// reset intrrution flag
 		P2IFG &= ~SENSOR_PIN;
+		// invoke callback
 		on_sensor_callback();
 	}
 }

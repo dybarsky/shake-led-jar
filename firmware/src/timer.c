@@ -15,15 +15,15 @@ overflow = 8 cycles (tacts / counter)
 unsigned char cycles = 0;
 
 void configure_timer() {
-    // set timer counter
-    TA1CCR0 = COUNT;
+	// set timer counter
+	TA1CCR0 = COUNT;
 }
 
 void start_timer() {
-    // sum-main clock + freq divider 4 + up mode + init
-    TA1CTL = TASSEL_2 + ID_2 + MC_1 + TACLR;
+	// sum-main clock + freq divider 4 + up mode + init
+	TA1CTL = TASSEL_2 + ID_2 + MC_1 + TACLR;
 	// enable timer interruptions
-    TA1CCTL0 = CCIE;
+	TA1CCTL0 = CCIE;
 }
 
 void stop_timer() {
@@ -40,7 +40,7 @@ void stop_timer() {
 #pragma vector = TIMER1_A0_VECTOR
 __interrupt void on_timer1_ccr0(void) {
 	// reset interruption flag
-    TA1CCTL0 &= ~CCIFG;
+	TA1CCTL0 &= ~CCIFG;
 	// skip cycle till full cycle completes
 	if (++cycles < OVERFLOW) {
 		return;
