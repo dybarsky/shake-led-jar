@@ -1,1 +1,7 @@
 build
+*.lck
+.DS_Store
+_autosave*
+fp-info-cache
+shake-backups
+gbr
