@@ -1,7 +1,7 @@
 #include <msp430g2553.h>
 #include "sensor.h"
 
-#define SENSOR_PIN BIT3
+#define SENSOR_PIN BIT7
 
 void configure_sensor() {
 	// select as digital io
