@@ -3,5 +3,5 @@ build
 *.zip
 _autosave*
 .DS_Store
+.idea
 fp-info-cache
-shake-backups
